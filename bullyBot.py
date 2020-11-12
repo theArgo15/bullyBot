@@ -22,26 +22,29 @@ async def on_ready():
     )
 
 @bot.command(name='bully', help='Creates a new channel for bullying a new member')
-async def on_message(ctx, victim):
+async def on_message(ctx, *args):
     
-
-
-    victim=victim.lower().strip()
-    channel_name=f'making-fun-of-{victim}'
-    guild = ctx.guild
-    existing_channel = discord.utils.get(guild.channels, name=channel_name)
-    bullying_category = discord.utils.get(guild.categories, name='bullying')
-
-    if not existing_channel:
-        response = f'Good choice, {victim} is due for a bullying'
-        #print(f'Creating a new channel for the purpose of bullying {victim}.')
-        await guild.create_text_channel(channel_name, category=bullying_category)
-
+    #if args is len is 0 you want to deliever help dialog, otherwise you want to grab the first arg as victim
+    print(args)
+    if len(args) == 0:
+        await ctx.send('Type the name of the person you want to bully after !bully')
     else:
-        response = f'Hey now, we already have a channel for bullying {victim}'
+        victim = args[0]
 
-    await ctx.send(response)
+        victim=victim.lower().strip()
+        channel_name=f'making-fun-of-{victim}'
+        guild = ctx.guild
+        existing_channel = discord.utils.get(guild.channels, name=channel_name)
+        bullying_category = discord.utils.get(guild.categories, name='bullying')
 
+        if not existing_channel:
+            response = f'Good choice, {victim} is due for a bullying'
+            #print(f'Creating a new channel for the purpose of bullying {victim}.')
+            await guild.create_text_channel(channel_name, category=bullying_category)
 
+        else:
+            response = f'Hey now, we already have a channel for bullying {victim}'
+
+        await ctx.send(response)
 
 bot.run(TOKEN)
