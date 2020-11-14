@@ -38,13 +38,13 @@ async def on_message(ctx, *args):
         victim = victim.lower().strip()
         channel_name = f'making-fun-of-{victim}'
         guild = ctx.guild
-        #look to see if there is already a channel for this victim
+        # look to see if there is already a channel for this victim
         existing_channel = discord.utils.get(guild.channels, name=channel_name)
         bullying_category = discord.utils.get(
             guild.categories, name='bullying')
 
         if not existing_channel:
-            #create a new channel
+            # create a new channel
             positive_responses = [
                 f"Oh yeah, it's time to bully {victim}",
                 f"Good choice, {victim} is due for a bullying",
@@ -54,12 +54,13 @@ async def on_message(ctx, *args):
                 f"Okay, I'm going to open a channel to bully {victim}. Don't be too harsh, {victim} is a delicate flower"
             ]
             response = random.choices(positive_responses)[0]
-            print(f'Creating a new channel for the purpose of bullying {victim}.')
+            print(
+                f'Creating a new channel for the purpose of bullying {victim}.')
 
             await guild.create_text_channel(channel_name, category=bullying_category)
 
         else:
-            #make a sassy remark about how there is already a channel for this victim
+            # make a sassy remark about how there is already a channel for this victim
             negative_responses = [
                 f"If you want to bully {victim}, there is already a channel for that",
                 f"Hey now, we already have a channel for bullying {victim}",
