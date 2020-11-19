@@ -50,7 +50,7 @@ async def on_message(ctx, *args):
                 f"Good choice, {victim} is due for a bullying",
                 f"You're right, {victim} was getting too uppity",
                 f"{victim} needs to be taken down a notch",
-                f"{victim}!, I hate that guy"
+                f"{victim}!, I hate that guy",
                 f"Okay, I'm going to open a channel to bully {victim}. Don't be too harsh, {victim} is a delicate flower"
             ]
             response = random.choices(positive_responses)[0]
