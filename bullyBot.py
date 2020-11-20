@@ -25,6 +25,30 @@ async def on_ready():
     )
 
 
+@bot.command(name='insult', help='Creates an insult directed at a given target')
+async def on_message(ctx, *args):
+    print(args)
+    if len(args) == 0:
+        await ctx.send('Type the name of the person you would like me to insult after !insult')
+    else:
+        target = args[0]
+        insults = [
+            f"{target}'s mother was a hamster and their father smelled of elderberries",
+            f"{target} is the kind of person that leaves their shopping cart loose in the parking lot",
+            f"{target} is actually quite smart but they never apply themselves, so they will always be a shadow of who they could have been",
+            f"{target} doesn't have the common decency to use turn signals",
+            f"{target} is dumber than snake mittens",
+            f"{target} is a sloppy drunk",
+            f"{target} failed Psych 101 in college",
+            f"{target} was not the favorite child in their household",
+            f"If {target} was a spice, they'd be flour",
+            f"{target} thought Atlas Shrugged was an interesting story",
+            f"{target} fully believed the earth was flat well into their teens"
+        ]
+        response = random.choices(insults)[0]
+        await ctx.send(response)
+
+
 @bot.command(name='bully', help='Creates a new channel for bullying a new member')
 async def on_message(ctx, *args):
 
