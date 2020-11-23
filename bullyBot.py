@@ -28,6 +28,18 @@ adjectives = [
         "smelly",
         "buttlicking",
         "shitfilled",
+        "satanic",
+        "reptilian",
+        "foul",
+        "repugnant",
+        "inarticulate",
+        "vapid",
+        "maimed",
+        "vacuous",
+        "grotesque",
+        "gangling",
+        "cloddish",
+        "petty",
 ]
 
 nouns = [
@@ -39,6 +51,13 @@ nouns = [
         "bumfuzzle",
         "lollygag",
         "diddle daddler",
+        "santorum",
+        "pelvic floor",
+        "ignoramus",
+        "invalid",
+        "oaf",
+        "earlobe",
+        "buttfumbler",
 ]
 
 @bot.event
@@ -109,7 +128,7 @@ async def on_message(ctx, *args):
             f"{target} is secretly attracted to the mom from Rolie Polie Olie",
             f"{target} sucks ass at foosball. Challenge me, pussy.  You don't stand a fucking chance.",
             f"{target} always showers right before they shit",
-            f"{target} has small genitles. "*32,
+            f"{target} has small genitals. "*32,
             f"Fuck you. "*100,
             f"Fuck you {target}.",
             f"{target} is the most {pick(adjectives)} {pick(adjectives)} {pick(nouns)} I have ever known",
@@ -119,6 +138,16 @@ async def on_message(ctx, *args):
             f"{target} has a {pick(adjectives)} butthole",
             f"{target} can lick my {pick(adjectives)} ass",
             f"{target} looks like a {pick(adjectives)} {pick(nouns)} trying to pass as a {pick(adjectives)} {pick(nouns)}",
+            f"If you think about it, {target} shares many character traits with Baron Harkonnen from Dune",
+            f"{target} insists it is not weird for them to watch childrens TV shows because 'it's for all ages!'",
+            f"{target} is never sure if is it okay for them to say gracias at a mexican restaurant",
+            f"{target} over-pronounces foreign words",
+            f"{target} likes doing jigsaw puzzles",
+            f"{target} would go to a charity event just to make an appearance, grab a snack, and leave without actually doing anything",
+            f"{target} asks people crying in public to keep it down",
+            f"{target} texts in a movie theater during the movie",
+            f"{target} will puke in the sink, even if a toilet or garbage can is available",
+            f"{target}'s favorite beer is Miller High Life",
         ]
         response = pick(insults)
         await ctx.send(response)
