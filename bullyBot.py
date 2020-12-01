@@ -12,53 +12,56 @@ GUILD = os.getenv('DISCORD_GUILD')
 
 bot = commands.Bot(command_prefix='!')
 
-pick = lambda list: random.choices(list)[0]
+
+def pick(list): return random.choices(list)[0]
+
 
 adjectives = [
-        "blathering",
-        "filthy",
-        "massive",
-        "unholy",
-        "buttnaked",
-        "cattywampus",
-        "bloviating",
-        "disgusting",
-        "contemptable",
-        "vile",
-        "smelly",
-        "buttlicking",
-        "shitfilled",
-        "satanic",
-        "reptilian",
-        "foul",
-        "repugnant",
-        "inarticulate",
-        "vapid",
-        "maimed",
-        "vacuous",
-        "grotesque",
-        "gangling",
-        "cloddish",
-        "petty",
+    "blathering",
+    "filthy",
+    "massive",
+    "unholy",
+    "buttnaked",
+    "cattywampus",
+    "bloviating",
+    "disgusting",
+    "contemptable",
+    "vile",
+    "smelly",
+    "buttlicking",
+    "shitfilled",
+    "satanic",
+    "reptilian",
+    "foul",
+    "repugnant",
+    "inarticulate",
+    "vapid",
+    "maimed",
+    "vacuous",
+    "grotesque",
+    "gangling",
+    "cloddish",
+    "petty",
 ]
 
 nouns = [
-        "piece of shit",
-        "slice of cheese",
-        "walrus",
-        "chicken fucker",
-        "turkey leg of a person",
-        "bumfuzzle",
-        "lollygag",
-        "diddle daddler",
-        "santorum",
-        "pelvic floor",
-        "ignoramus",
-        "invalid",
-        "oaf",
-        "earlobe",
-        "buttfumbler",
+    "piece of shit",
+    "slice of cheese",
+    "walrus",
+    "chicken fucker",
+    "turkey leg of a person",
+    "bumfuzzle",
+    "lollygag",
+    "diddle daddler",
+    "santorum",
+    "pelvic floor",
+    "ignoramus",
+    "invalid",
+    "oaf",
+    "earlobe",
+    "buttfumbler",
 ]
+
 
 @bot.event
 async def on_ready():
@@ -169,7 +172,7 @@ async def on_message(ctx, *args):
         # look to see if there is already a channel for this victim
         existing_channel = discord.utils.get(guild.channels, name=channel_name)
         bullying_category = discord.utils.get(
-            guild.categories, name='bullying')
+            guild.categories, name='Bullying')
 
         if not existing_channel:
             # create a new channel
