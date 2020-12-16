@@ -80,14 +80,11 @@ async def on_message(ctx, *args):
     print(args)
     if len(args) == 0:
         await ctx.send('Type the name of the person you would like me to insult after !insult')
-    if args[0].lower().strip() == 'bullybot':
+    if args[0].lower().strip() == 'bullybot' or (args[0].lower().strip() == 'bully' and args[1].lower().strip() == 'bot'):
         await ctx.send('Fuck off, I am not going to insult myself')
     else:
-        #target = args[0]
         full_msg = ' '.join(args)
-        print(full_msg)
         split_msg = full_msg.split('.')
-        print(split_msg)
         target = split_msg[0]
         insults = [
             f"{target}'s mother was a hamster and their father smelled of elderberries",
@@ -162,6 +159,7 @@ async def on_message(ctx, *args):
             f"{target} looks like the Globglogabgalab",
             f"{target} spends their weekends volunteering at a soup kitchen. Not because it's a good thing to do, but because they are unlikeable and no one cares about them enough to spend time with them",
             f"{target} is ashamed of their porn habits",
+            f"{target} makes references no one understands",
         ]
         response = pick(insults)
         await ctx.send(response)
