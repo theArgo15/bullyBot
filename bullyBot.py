@@ -77,15 +77,16 @@ async def on_ready():
 
 @bot.command(name='insult', help='Creates an insult directed at a given target')
 async def on_message(ctx, *args):
-    print(args)
     if len(args) == 0:
         await ctx.send('Type the name of the person you would like me to insult after !insult')
-    if args[0].lower().strip() == 'bullybot' or (args[0].lower().strip() == 'bully' and args[1].lower().strip() == 'bot'):
-        await ctx.send('Fuck off, I am not going to insult myself')
     else:
         full_msg = ' '.join(args)
         split_msg = full_msg.split('.')
         target = split_msg[0]
+        if args[0].lower().strip() == 'bullybot' or (args[0].lower().strip() == 'bully' and args[1].lower().strip() == 'bot'):
+            author=ctx.message.author.display_name
+            await ctx.send(f'Fuck off {author}, I am not going to insult myself')
+            target = author
         insults = [
             f"{target}'s mother was a hamster and their father smelled of elderberries",
             f"{target} is the kind of person that leaves their shopping cart loose in the parking lot",
