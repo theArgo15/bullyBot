@@ -98,7 +98,7 @@ async def on_message(ctx, *args):
             f"{target} was not the favorite child in their household",
             f"If {target} was a spice, they'd be flour",
             f"{target} thought Atlas Shrugged was an interesting story",
-            f"{target} fully believed the earth was flat well into their teens"
+            f"{target} fully believed the earth was flat well into their teens",
             f"{target} chews with their mouth open",
             f"{target} thinks they shit don't stank, but it do",
             f"{target} wipes their ass from back to front",
@@ -161,6 +161,7 @@ async def on_message(ctx, *args):
             f"{target} spends their weekends volunteering at a soup kitchen. Not because it's a good thing to do, but because they are unlikeable and no one cares about them enough to spend time with them",
             f"{target} is ashamed of their porn habits",
             f"{target} makes references no one understands",
+            f"{target} needs to get their shit together. Get it all together. And put it in a backpack. All your shit. So it's together. And if you gotta take it somewhere, take it somewhere, you know, take it to the shit store and sell it... Or put it in a shit museum, I don't care what you do, you just gotta get it together. Get your shit together.",
         ]
         response = pick(insults)
         await ctx.send(response)
