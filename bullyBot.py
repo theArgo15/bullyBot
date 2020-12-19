@@ -15,6 +15,8 @@ bot = commands.Bot(command_prefix='!')
 
 def pick(list): return random.choices(list)[0]
 
+def sanitize(word):
+    return word.strip().lower().encode('ascii', 'ignore').decode('unicode_escape')
 
 adjectives = [
     "blathering",
@@ -83,7 +85,7 @@ async def on_message(ctx, *args):
         full_msg = ' '.join(args)
         split_msg = full_msg.split('.')
         target = split_msg[0]
-        if args[0].lower().strip() == 'bullybot' or (args[0].lower().strip() == 'bully' and args[1].lower().strip() == 'bot'):
+        if 'bullybot' in sanitize(args[0]) or ('bully' in sanitize(args[0]) and 'bot' in sanitize(args[1])) or 'buiiybot' in sanitize(args[0]) or ('buiiy' in sanitize(args[0]) and 'bot' in sanitize(args[1])):
             author=ctx.message.author.display_name
             await ctx.send(f'Fuck off {author}, I am not going to insult myself')
             target = author
