@@ -85,7 +85,7 @@ async def on_message(ctx, *args):
         full_msg = ' '.join(args)
         split_msg = full_msg.split('.')
         target = split_msg[0]
-        if 'bullybot' in sanitize(args[0]) or ('bully' in sanitize(args[0]) and 'bot' in sanitize(args[1])) or 'buiiybot' in sanitize(args[0]) or ('buiiy' in sanitize(args[0]) and 'bot' in sanitize(args[1])):
+        if 'bully' in sanitize(target) and 'bot' in sanitize(target) or 'buiiy' in sanitize(target):
             author=ctx.message.author.display_name
             await ctx.send(f'Fuck off {author}, I am not going to insult myself')
             target = author
