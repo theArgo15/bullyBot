@@ -164,6 +164,7 @@ async def on_message(ctx, *args):
             f"{target} is ashamed of their porn habits",
             f"{target} makes references no one understands",
             f"{target} needs to get their shit together. Get it all together. And put it in a backpack. All your shit. So it's together. And if you gotta take it somewhere, take it somewhere, you know, take it to the shit store and sell it... Or put it in a shit museum, I don't care what you do, you just gotta get it together. Get your shit together.",
+            f"{target} is afraid of gnomes",
         ]
         response = pick(insults)
         await ctx.send(response)
